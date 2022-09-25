@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>counter</title>
+    <script>
+
+        
+        document.addEventListener('DOMContentLoaded', () => { // event listener that lets the DOM get loaded before js execution
+            let counter = 0 // variable to keep count
+            document.querySelector('#countPlus').onclick = () => { // check if increment button is clicked
+                document.querySelector('#number').innerHTML = ++counter; // increase the count
+            }
+            document.querySelector('#countMinus').onclick = () => { // check if decrement button is clicked
+                if (counter>=1) { // validation -> dont let number go below 0
+                    document.querySelector('#number').innerHTML = --counter; // decrease the count
+                } 
+            }
+            document.querySelector('#refresh').onclick = () => { // check if refresh button is clicked
+                document.querySelector('#number').innerHTML = 0; // set value back to 0
+                counter = 0 // reset variable to 0
+            }
+        })
+
+    </script>
+</head>
+<body>
+    <h1>Counter</h1>
+    <h2 id="number">0</h2>
+    <button id="countPlus">Increment</button>
+    <button id="countMinus">Decrement</button>
+    <button id="refresh">Refresh</button>
+</body>
+</html>

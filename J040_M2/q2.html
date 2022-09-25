@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let name = 'Harsh'
+        let age = 20
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('name').innerHTML = name;
+            document.getElementById('age').innerHTML = age;
+
+            document.getElementById('add').onclick = () => {
+                document.getElementById('answer').innerHTML = '3';
+            }
+        })
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1 id="name"></h1>
+    <h2 id="age"></h2>
+
+    <h1 id="answer">Answer</h1>
+    <p>Click to check 1 + 2</p>
+    <button id="add">Add</button> 
+
+    
+
+
+</body>
+
+</html>

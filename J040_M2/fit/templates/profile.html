@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login</title>
+    <style>
+        div {
+            color: black;
+        }
+    </style>
+{% endblock title %}
+
+{% block content %}
+{% load static %}
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <span class="navbar-brand mb-1"><h3>ToDoLIST</h3></span>
+                    </div>
+                    <div style="margin-right: 2%;">
+                        <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </nav>
+                <div>
+                    <h3 class="text-dark mb-4" style="text-align: center;">Tasks</h3>
+                    <a class="btn btn-primary" href="" style="margin-left: 47%; margin-bottom: 2%;">Add task</a>
+                </div>
+                
+                {% for task in tasks %}
+                <div class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{task.name}}</h5>
+                      <h6 class="card-subtitle mb-2">{{task.subject}}</h6>
+                      <p class="card-text">Assigned by: {{task.assigned_by}}</p>
+                      <a class="btn btn-primary btn-sm" href="" style="margin-left: 85%;">Edit</a>
+                    </div>
+                </div>
+                </div>
+                <br>
+                {% endfor %}
+            
+            </div>    
+        </div>
+    </div>   
+{% endblock content %}
+        
